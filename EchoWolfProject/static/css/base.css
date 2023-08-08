@@ -1,0 +1,64 @@
+/* Declare root variables */
+:root {
+	--main-bg-color: rgb(22, 30, 41);
+	--secundary-bg-color: rgb(46 60 81);
+	--main-font-family: 'Jost', sans-serif;
+
+	--main-color: rgb(22, 30, 41);
+	--main-color-highlight: rgb(46 60 81);
+	--secundary-color: #573b8a;
+	--secundary-color-highlight: #6d44b8;
+}
+
+
+
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--main-font-family);
+    background: var(--main-bg-color);
+}
+
+.navbar {
+	background: var(--secundary-bg-color);
+    padding: 10px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+	justify-content: center;
+	display: flex;
+	width: 100%;
+	height: 60px;
+	/* margin-top: 30px; */
+}
+
+.title-container {
+	color: #fff;
+	justify-content: center;
+	display: flex;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+}

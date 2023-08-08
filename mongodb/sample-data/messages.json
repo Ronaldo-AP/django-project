@@ -1,0 +1,17 @@
+[
+    {
+        "addedDateTime": "2023-02-01T00:00:00.000Z",
+        "message": "Hola mundo, como estais todos?",
+        "username": "aperez"
+    },
+    {
+        "addedDateTime": "2023-02-02T00:00:00.000Z",
+        "message": "Cuidado, podrian estar espiando nuestros mensajes",
+        "username": "jdoe"
+    },
+    {
+        "addedDateTime": "2023-02-03T00:00:00.000Z",
+        "message": "No te preocupes, tenemos la mejor seguridad del mercado",
+        "username": "cortega"
+    }
+]

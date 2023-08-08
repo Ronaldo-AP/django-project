@@ -1,0 +1,53 @@
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.toast-alert {
+    z-index: 999999;
+
+    max-width: 300px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    opacity: 0;
+    animation-name: fade-in-out;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+}
+
+.toast-alert.error {
+    background-color: #f24c44;
+}
+
+.toast-alert.warning {
+    background-color: #db9b31;
+}
+
+.toast-alert.success {
+    background-color: #92bf2c;
+}
+
+.toast-alert.info {
+    background-color: #db9b31;
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

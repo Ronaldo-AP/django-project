@@ -1,0 +1,55 @@
+{% load static %}
+
+<div class="message-item main">
+
+    <style>
+        .user-avatar-container { 
+            margin-right: 5px;
+        }
+        
+        .user-avatar img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin: 0px 5px;
+        }
+        
+        .message-empty-head {
+            padding: 0px 0px 10px 0px;
+        }
+        
+        .message-body {
+            display: flex;
+            padding: 5px;
+        }
+    </style>
+
+    <article class="message-item">
+
+        <div class="message-empty-head"></div>
+        <div class="message-body">
+
+            <div class="user-avatar-container">
+                <div class="user-avatar">
+                    <div>
+                        <img src="{% static message.user.image %}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-container">
+                <div class="user-name-container">
+                    <span>
+                        <a href="/profile/{{ message.user.username}}/">{{ message.user.username }}</a>
+                    </span>
+                    <span>{{ message.addedDateTime|date:'H:i, d M' }}</span>
+                </div>
+                <div class="message">
+                    <p>{{ message.content }}</p>
+                </div>
+            </div>
+            
+        </div>
+    </article>
+
+</div>

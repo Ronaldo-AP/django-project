@@ -1,0 +1,139 @@
+.section-left {
+    width: 20%;
+}
+
+.section-right {
+    width: 40%;
+}
+
+.section-center {
+    width: 40%;
+}
+
+.sections {
+    display: flex;
+}
+
+.user-profile {
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #0f0c29cf, #302b63, #24243e);
+    padding: 5px;
+    margin: 10px;
+}
+
+.user-profile img {
+    width: 80%;
+    border-radius: 50%;
+    margin: 10% 10% 0% 10%;
+}
+
+.user-profile h1 {
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+    color: white;
+}
+
+.scrap-task-container {
+    border-color: #0f0c29cf;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 5px;
+    margin: 10px;
+    height: 55%;
+    min-height: 200px;
+    overflow-y: scroll;
+}
+
+.scrap-task-main {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border-color: #0f0c29cf;
+    border-width: 2px;
+    border-style: solid;
+    padding: 5px;
+    margin: 10px;
+}
+
+.scrap-task.status-block {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.scrap-task.icon-status {
+    padding: 0px 5px 0px 5px;
+}
+
+.scrap-task.times {
+    text-align: end;
+    font-size: 10px;
+}
+
+.write-message-container #message {
+    width: 90%;
+    border-color: #0f0c29cf;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+	outline: none;
+
+  }
+
+.write-message-container button{
+	width: 40%;
+	height: 40px;
+	margin: 10px auto;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+.write-message-container button:hover{
+	background: #6d44b8;
+}
+
+
+.scrapdata-artist-label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.scrapdata-artist-label img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10%;
+    margin-right: 5px;
+}
+
+.scrapdata-genre {
+    display: flex;
+    align-items: center;
+}
+
+.scrapdata-wishlist {
+    display: flex;
+    align-items: center;
+    /* padding: 10px;
+    margin: 10px; */
+}
+
+.scrapdata-wishlist img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10%;
+    margin-right: 5px;
+}

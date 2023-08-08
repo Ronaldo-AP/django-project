@@ -1,0 +1,16 @@
+[
+    {
+        "username": "abacotestscraping",
+        "addedDateTime": "2023-06-12T00:30:30.000Z",
+        "externalPlatformId": 1,
+        "timeExecution": null,
+        "status": 0
+    },
+    {
+        "username": "abacotestscraping",
+        "addedDateTime": "2023-06-12T00:00:30.000Z",
+        "externalPlatformId": 1,
+        "timeExecution": null,
+        "status": 0
+    }
+]

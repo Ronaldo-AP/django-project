@@ -1,0 +1,34 @@
+[
+    {
+        "username": "abacotestscraping",
+        "password": "gAAAAABkj5LHJypsUzhgRddkz7kvR-E4_9rdzucjUdW388k8AjhxhVdotWYPvYp8FW7MJ6hWR4iXqO6z8A7mD8mvnrqHnSgljkXOAo9OI7tWc8GiIllOIGM=",
+        "firstName": "abaco",
+        "lastName": "scraping",
+        "email": "abacotestscraping@example.com",
+        "addedDateTime": "2023-01-01T00:00:00.000Z"
+    },
+    {
+        "username": "aperez",
+        "password": "gAAAAABkj5KOI0qSler48MG20-v99P0zv89WN9s4R3NqQflm_xtBpeGQ7bPFLwI0H8Y6TMIQaVREI79yKGC91keu-pCKMbBADA==",
+        "firstName": "Antonio",
+        "lastName": "Perez",
+        "email": "aperez@example.com",
+        "addedDateTime": "2023-01-01T00:00:00.000Z"
+    },
+    {
+        "username": "jdoe",
+        "password": "gAAAAABkj5KOI0qSler48MG20-v99P0zv89WN9s4R3NqQflm_xtBpeGQ7bPFLwI0H8Y6TMIQaVREI79yKGC91keu-pCKMbBADA==",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "jdoe@example.com",
+        "addedDateTime": "2023-01-03T00:00:00.000Z"
+    },
+    {
+        "username": "cortega",
+        "password": "gAAAAABkj5KOI0qSler48MG20-v99P0zv89WN9s4R3NqQflm_xtBpeGQ7bPFLwI0H8Y6TMIQaVREI79yKGC91keu-pCKMbBADA==",
+        "firstName": "Carlos",
+        "lastName": "Ortega",
+        "email": "cortega@example.com",
+        "addedDateTime": "2023-01-04T00:00:00.000Z"
+    }
+]

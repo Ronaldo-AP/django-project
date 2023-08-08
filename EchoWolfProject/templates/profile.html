@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gateter | Profile{% endblock %}
+
+{% block customstyles %} 
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="sections">
+    <div class="section-left">
+
+        <div class="user-profile">
+            <div class="user-image">
+                <img src="{% static user.image %}" alt="">
+            </div>
+            <div>
+                <h1>{{ user.username }}</h2>
+            </div>
+        </div>
+
+
+        {% if isCurrentUser %}
+            <div class="scrap-task-container">
+                <div class="scrap-task-title">Historico de Scraping</div>
+                {% for scraptask in scraptasks %}
+                    <div class="scrap-task-main">
+                        <div class="scrap-task status-block">
+                            {% if scraptask.status == 0 %}
+                                <i class="fa-solid fa-spinner scrap-task icon-status" style="color: #ffd43b;"></i>
+                                <span class="scrap-task status">Pendiente</span>
+                            {% elif scraptask.status == 1 %}
+                                <i class="fa-solid fa-spinner scrap-task icon-status" style="color: #77bb41;"></i>
+                                <span class="scrap-task status">En ejecución</span>
+                            {% elif scraptask.status == 2 %}
+                                <i class="fa-solid fa-check scrap-task icon-status" style="color: green;"></i>
+                                <span class="scrap-task status">Completada</span>
+                            {% elif scraptask.status == 3 %}
+                                <i class="fa-solid fa-xmark scrap-task icon-status" style="color: red;"></i>
+                                <span class="scrap-task status">Error</span>
+                            {% elif scraptask.status == 4 %}
+                                <i class="fa-solid fa-spinner scrap-task icon-status" style="color: #ffd43b;"></i>
+                                <span class="scrap-task status">Reintentando</span>
+                            {% endif %}
+                        </div>
+                        <div class="scrap-task times">
+                            <div class="scrap-task datetime">{{ scraptask.addedDateTime|date:'d/m/Y H:i' }}</div>
+                            <div class="scrap-task timeExecution">Duración: {{ scraptask.timeExecution|floatformat:2 }}s</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+    </div>
+
+    <div class="section-center">
+
+        <div class="write-message-container">
+            {% if isCurrentUser %}
+                <form>
+                    <textarea id="message" maxlength="140" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    <br>
+                    <button type="submit">Publicar</button>
+                </form>
+            {% endif %}
+        </div>
+
+        <div class="messages-container">
+            {% for message in messages %} 
+                {% include "message-item.html" %}
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="section-right">
+        {% if isCurrentUser %}
+            <div>
+                {% if scrapData.properties.followings.artistsAndLabels %}
+                    <h3>Artistas y Etiquetas</h3>
+                    <div class="scrapdata-artists-labels">
+                        {% for artintLabel in scrapData.properties.followings.artistsAndLabels %}
+                            <div class="scrapdata-artist-label">
+                                <div class="scrapdata-artist-label-image">
+                                    <img src="{{ artintLabel.image }}" alt="">
+                                </div>
+                                <div class=scrapdata-artist-label-data>
+                                    <div class="scrapdata-artist-label-name">{{ artintLabel.name }}</div>
+                                    <a class="scrapdata-artist-label-url" href="{{ artintLabel.url }}">{{ artintLabel.url }}</a>
+                                    <div class="scrapdata-artist-label-location">{{ artintLabel.location }}</div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if  scrapData.properties.followings.genres %}
+                    <h3>Generos</h3>
+                    <div class="scrapdata-genres">
+                        {% for genre in scrapData.properties.followings.genres %}
+                            <div class="scrapdata-genre">
+                                <a class="scrapdata-genre-count" href="{{ genre.url }}">{{ genre.name }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if scrapData.properties.wishlists %}
+                    <h3>Lista de deseos</h3>
+                    <div class="scrapdata-wishlists">
+                        {% for wishlist in scrapData.properties.wishlists %}
+                            <div class="scrapdata-wishlist">
+                                <div class="scrapdata-wishlist-image">
+                                    <img src="{{ wishlist.image }}" alt="">
+                                </div>
+                                <div class=scrapdata-wishlist-data>
+                                    <div class="scrapdata-wishlist-name">{{ wishlist.name }}</div>
+                                    <div class="scrapdata-wishlist-artist">{{ wishlist.artist }}</div>
+                                    <a class="scrapdata-wishlist-url" href="{{ wishlist.url }}">{{ wishlist.url }}</a>
+                                    <div class="scrapdata-wishlist-tags">
+                                        {% for tag in wishlist.tags %}
+                                            <span>{{ tag }}</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+            </div>
+        {% endif %}
+    </div>
+<div>
+
+{% endblock %}

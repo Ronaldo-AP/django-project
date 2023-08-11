@@ -1,4 +1,3 @@
 FROM mongo
 
-COPY init-db.js /docker-entrypoint-initdb.d/
-COPY sample-data/ /sample-data/
+COPY mongodb/init-db.js /docker-entrypoint-initdb.d/

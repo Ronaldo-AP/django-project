@@ -1,5 +1,4 @@
-assets
-gateterproyect
-clave.key
-Pipfile.lock
+
 **/__pycache__/
+
+**/migrations/

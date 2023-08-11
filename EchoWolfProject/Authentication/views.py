@@ -1,15 +1,20 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
-from django.db import IntegrityError
 from django.contrib import messages
+from django.contrib.auth import logout
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
 
 from .forms import LoginForm, SignUpForm
 
 from .models import User
-from .messages import MessagesTemplates, mapValidationMessages
+from .toastMessages import ToastMessagesModel, mapValidationMessages
+
+@login_required
+def logoutView(request):
+    logout(request)
+    return redirect('login')
 
 
 @login_required
@@ -26,7 +31,7 @@ class CustomLoginView (LoginView):
         return reverse_lazy('feed')
     
     def form_invalid(self, form):
-        messages.error(self.request, MessagesTemplates.unauthorized())
+        messages.error(self.request, ToastMessagesModel.unauthorized())
         return self.render_to_response(self.get_context_data(form=form))
 
 class CustomSignUpView (FormView):
@@ -42,7 +47,7 @@ class CustomSignUpView (FormView):
         try:
             user = User.objects.create_user(username=username, password=password, email=email)
             user.save()
-            messages.success(self.request, MessagesTemplates.signUpSuccess())
+            messages.success(self.request, ToastMessagesModel.signUpSuccess())
             return redirect(self.success_url)
         except:
             return self.form_invalid(form)

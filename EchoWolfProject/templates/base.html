@@ -26,10 +26,12 @@
                 <span>EchoWolf</span>
             </div>
         </div>
-        <div class="user-info">
-            <img href="/profile/{{ user.username }}/" src="/{{ user.profile_image }}" alt="user-image">
-            <a class="username" href="/profile/{{ user.username }}/">{{ user.username }}</a>
-        </div>
+        {% if user %}
+            <div class="user-info">
+                <img href="/profile/{{ user.username }}/" src="/{{ user.profile_image }}" alt="user-image">
+                <a class="username" href="/profile/{{ user.username }}/">@{{ user.username }}</a>
+            </div>
+        {% endif %}
     </div>
     
     {% block content %} {% endblock %}

@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG')
+DEBUG = bool(os.getenv('DJANGO_DEBUG'))
 
 # Allowed all hosts
 ALLOWED_HOSTS = ['*']
@@ -37,6 +37,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'Authentication',
+    'FeedManager',
+    'FeedMessages',
     'djongo',
     'django.contrib.admin',
     'django.contrib.auth',

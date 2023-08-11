@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 from Types.main import LiteralLang
 
-class MessagesTemplates(BaseModel):
+class ToastMessagesModel(BaseModel):
 
     @staticmethod
     def unauthorized (lang: LiteralLang = settings.LANGUAGE_CODE):

@@ -5,15 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "Python: Django",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "cwd": "${workspaceFolder}/EchoWolfProject",
+            "program": "${workspaceFolder}/EchoWolfProject/manage.py",
+            "args": ["runserver"],
             "console": "integratedTerminal",
             "justMyCode": true,
             "envFile": "${workspaceFolder}/.env",
-            "cwd": "${workspaceFolder}",
-            "env": {"PYTHONPATH": "${workspaceFolder}"}
+            "env": {"PYTHONPATH": "${workspaceFolder}"},
+            "django": true,
         }
     ]
 }

@@ -10,6 +10,14 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet" />
 
+        {% comment %} Execute script after load page: check element if signup page {% endcomment %}
+        <script>
+            window.onload = function() {
+                var chk = document.getElementById("chk")
+                if (location.pathname.includes('signup')) chk.checked = true
+            }
+        </script>
+
         {% include "favicon.html" %}
 
     </head>
@@ -40,7 +48,7 @@
                 </form>
             </div>
 
-			<div class="signup">
+            <div class="signup">
                 <form method="POST" action="{% url 'signup' %}">
 
                     {% csrf_token %}
@@ -50,7 +58,6 @@
                     <input id="username" type="text" name="username" placeholder="Nombre de usuario" required="" />
                     <input id="email" type="text" name="email" placeholder="Email" required="" />
                     <input id="password" type="password" name="password" placeholder="Contraseña" required="" />
-                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="Confirmar contraseña" required="" />
 
                     <button type="submit">Sign up</button>
                 </form>
